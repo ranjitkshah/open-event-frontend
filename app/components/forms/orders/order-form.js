@@ -16,7 +16,7 @@ import { countries } from 'open-event-frontend/utils/dictionary/demography';
 
 
 export default Component.extend(FormMixin, {
-  router: service(),
+  router             : service(),
   autoScrollToErrors : false,
 
   buyerFirstName    : oneWay('buyerHasFirstName'),
@@ -121,6 +121,16 @@ export default Component.extend(FormMixin, {
         {
           type   : 'empty',
           prompt : this.l10n.t('Please select your age group')
+        }
+      ]
+    };
+
+    const acceptVideoRecordingValidation = {
+      rules: [
+        {
+          type   : 'checked',
+          value  : false,
+          prompt : this.l10n.t('In order to complete the order process you need to agree to the Photo & video & text consent')
         }
       ]
     };
@@ -461,6 +471,7 @@ export default Component.extend(FormMixin, {
       validationRules.fields[`lastname_required_${index}`] = lastNameValidation;
       validationRules.fields[`email_required_${index}`] = emailValidation;
       validationRules.fields[`gender_required_${  index}`] = genderValidation;
+      validationRules.fields[`acceptVideoRecording_required_${  index}`] = acceptVideoRecordingValidation;
       validationRules.fields[`ageGroup_required_${  index}`] = ageGroupValidation;
       validationRules.fields[`address_required_${  index}`] = addressValidation;
       validationRules.fields[`city_required_${  index}`] = cityValidation;
