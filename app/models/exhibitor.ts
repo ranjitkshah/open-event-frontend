@@ -18,7 +18,8 @@ export default class Exhibitor extends ModelBase.extend() {
   @attr() contactEmail!: string;
   @attr() contactLink!: string;
   @attr() position!: number;
-  @attr() socialLinks!: SocialLink[]
+  @attr() socialLinks!: SocialLink[];
+  @attr() isVideo!: boolean;
 
   @belongsTo('event') event!: Event;
 }

@@ -58,6 +58,16 @@
             @maxSizeInKb={{1000}} />
         </div>
       </div>
+       <div class="field">
+            <UiCheckbox 
+          @class="toggle mt-2 mb-2 weight-600"
+          @label={{t "Enable Video Room"}}
+          @checked={{@exhibitor.enableVideoRoom}}
+          @onChange={{action (mut @exhibitor.enableVideoRoom)}} />
+        {{#if @exhibitor.enableVideoRoom}}
+          <UrlBox @url={{'https://gamoby.in'}} />
+        {{/if}}
+      </div>
       <div class="field">
         <label>
           {{t 'Video URL'}}
