@@ -174,8 +174,8 @@ export default Component.extend(EventWizardMixin, FormMixin, {
     return this.data.sessionTypes.filterBy('isDeleted', false);
   }),
 
-  hasCallForSpeaker: computed('data.speakersCall.announcement', function() {
-    return !!this.data.speakersCall.announcement;
+  hasCallForSpeaker: computed('data.speakersCall.startsAt', function() {
+    return !!this.data.speakersCall.startsAt;
   }),
 
   hasSoftClosing: computed('data.speakersCall.softendsAt', function() {
